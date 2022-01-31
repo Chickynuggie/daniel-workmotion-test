@@ -26,3 +26,15 @@ Your task is to build a frontend application using React / Typescript including 
 
 
 ![Employee's states](https://github.com/peopleflw/frontend-challenge/blob/main/states.png?raw=true)
+
+# Developer's notes
+
+## Styled components
+
+Back in 2015 I had a huge comission to clean up a big angularJS project's messed up stylebase.
+That's when I've learned of BEM methodology, ITCSS, the specifity wars, and how these connect.
+Ever since I prefer using BEM over encapsulated stylings when I can, just to practice good housekeeping.
+
+## versions
+
+- node 16.0.0
