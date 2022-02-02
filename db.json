@@ -1,0 +1,16 @@
+{
+  "employees": [
+    { "id": 0, "firstName": "Finn", "lastName": "The Human", "status": "Added" },
+    { "id": 1, "firstName": "Jake", "lastName": "The Dog", "status": "Added" },
+    { "id": 2, "firstName": "Felix", "lastName": "Bueno", "status": "Added" },
+    { "id": 3, "firstName": "Sean", "lastName": "McLaren", "status": "Added" },
+    { "id": 4, "firstName": "Johnny", "lastName": "Silverhand", "status": "Added" },
+    { "id": 5, "firstName": "Geralt", "lastName": "Of Rivia", "status": "Added" },
+    { "id": 6, "firstName": "Jennefer", "lastName": "Of Vengerberg", "status": "Added" },
+    { "id": 7, "firstName": "Jaina", "lastName": "Proudmoore", "status": "Added" },
+    { "id": 8, "firstName": "Kenneth", "lastName": "Mccormick", "status": "Added" },
+    { "id": 9, "firstName": "Stan", "lastName": "Marsh", "status": "Added" },
+    { "id": 10, "firstName": "Eric", "lastName": "Cartman", "status": "Added" },
+    { "id": 11, "firstName": "Kyle", "lastName": "Broflovski", "status": "Added" }
+  ]
+}
