@@ -4,7 +4,7 @@ const initialState = Object.freeze({
     filteredEmployees: [],
     focused: null
   },
-  common: {
+  spinner: {
     isSpinning: false,
   },
 });

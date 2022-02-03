@@ -1,10 +1,18 @@
 .daniel-workmotion-app {
   .ant-page-header-heading-title {
-    font-size: 2vw;
+    font-size: 2.5vw;
     line-height: normal;
+  }
+
+  .ant-page-header-heading-sub-title {
+    font-size: 1.25vw;
   }
 
   .ant-page-header {
     border-bottom: 2px solid lightgrey;
+  }
+
+  .ant-menu-item {
+    font-size: 0.8vw;
   }
 }

@@ -6,6 +6,7 @@ import CustomPageHeader from "./components/CustomPageHeader";
 import rootReducer from "./redux/reducers";
 import initialState from "./redux/store";
 import Interceptor from "./interceptor";
+import EmployeeList from "./components/EmployeeList";
 
 const enhancer = compose(applyMiddleware(thunk));
 
@@ -18,6 +19,7 @@ const App = () => {
     <>
       <Provider store={store}>
         <CustomPageHeader></CustomPageHeader>
+        <EmployeeList></EmployeeList>
       </Provider>
     </>
   );
