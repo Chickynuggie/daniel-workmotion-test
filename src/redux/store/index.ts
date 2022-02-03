@@ -6,7 +6,7 @@ const initialState = Object.freeze({
   },
   spinner: {
     isSpinning: false,
-  },
+  }
 });
 
 export default initialState;

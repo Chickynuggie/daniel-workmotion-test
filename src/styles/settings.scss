@@ -3,7 +3,12 @@
 }
 
 body {
+  overflow-x: hidden;
   min-width: 100vw;
   min-height: 100vh;
   margin: 0;
+  background: url('../assets/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: right;
 }
