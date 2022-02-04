@@ -1,9 +1,10 @@
 import Employees from "./Employees";
 import Filter from './Filter';
+import Spinner from './Spinner';
 
 interface State {
   employees: Employees,
-  isSpinning: Boolean,
+  spinner: Spinner,
   filter: Filter
 }
 

@@ -7,6 +7,7 @@ import rootReducer from "./redux/reducers";
 import initialState from "./redux/store";
 import Interceptor from "./interceptor";
 import EmployeeList from "./components/EmployeeList";
+import Spinner from "./components/Spinner";
 
 // For redux devtool
 declare global {
@@ -27,6 +28,7 @@ const App = () => {
   return (
     <>
       <Provider store={store}>
+        <Spinner></Spinner>
         <CustomPageHeader></CustomPageHeader>
         <EmployeeList></EmployeeList>
       </Provider>
