@@ -16,7 +16,7 @@ const EmployeeList = (props: any) => {
   }, [getEmployees]);
 
   useEffect(() => {
-    updatePageNumber(1)
+    updatePageNumber(1);
   }, [activeFilter]);
 
   const [page, updatePageNumber] = useState(1);
@@ -37,7 +37,12 @@ const EmployeeList = (props: any) => {
               cover={<img alt="workmotion cover" src={mocklogo} />}
             >
               <Card.Meta
-                avatar={<Avatar src={avatar} className="employee-avatar" />}
+                avatar={
+                  <Avatar
+                    src={`https://i.pravatar.cc/150?u=${employee.id}` || avatar}
+                    className="employee-avatar"
+                  />
+                }
                 title={`${employee.firstName} ${employee.lastName}`}
                 description={`${employee.status}`}
               />
