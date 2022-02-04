@@ -6,6 +6,7 @@ import Employee from "../../models/Employee";
 import State from "../../models/State";
 import mocklogo from "../../assets/mocklogo_reduced.png";
 import avatar from "../../assets/avatar.png";
+import AddNewEmployee from "../AddNewEmployee";
 
 const EmployeeList = (props: any) => {
   const { employees, getEmployees, activeFilter } = props;
@@ -53,6 +54,7 @@ const EmployeeList = (props: any) => {
             />
           </div>
         )}
+        <AddNewEmployee></AddNewEmployee>
       </div>
     )
   );
