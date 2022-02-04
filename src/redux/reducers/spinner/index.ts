@@ -3,7 +3,7 @@ import initialState from "../../store";
 import { PayloadAction } from "@reduxjs/toolkit";
 
 const spinnerReducer = (
-  state: object = initialState,
+  state: object = initialState.spinner,
   action: PayloadAction<any>
 ) => {
   switch (action.type) {

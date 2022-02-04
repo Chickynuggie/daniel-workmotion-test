@@ -10,8 +10,6 @@ const employeesReducer = (
   switch (action.type) {
     case ACTIONTYPES.EMPLOYEES.SET_EMPLOYEES:
       return { ...state, employees: action.payload };
-    case ACTIONTYPES.EMPLOYEES.SET_FILTERED_EMPLOYEES:
-      return { ...state, filteredEmployees: action.payload };
     case ACTIONTYPES.EMPLOYEES.SET_EMPLOYEE_FOCUS:
       return { ...state, focused: action.payload };
     case ACTIONTYPES.EMPLOYEES.CLEAR_EMPLOYEE_FOCUS:

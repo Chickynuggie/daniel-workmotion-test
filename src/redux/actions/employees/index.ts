@@ -1,12 +1,11 @@
 import ACTIONTYPES from "../actionTypes";
 import { Dispatch } from 'redux';
 import { fetchEmployees, fetchEmployeeById } from "../../../api";
+import EmployeeStates from "../../../models/EmployeeStates";
 
 export const getEmployees = () => (dispatch: Dispatch) => {
   fetchEmployees().then(response => {
-    console.log(response);
     dispatch({ type: ACTIONTYPES.EMPLOYEES.SET_EMPLOYEES, payload: response.data });
-    dispatch({ type: ACTIONTYPES.EMPLOYEES.SET_FILTERED_EMPLOYEES, payload: response.data });
   });
 };
 

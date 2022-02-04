@@ -1,8 +1,9 @@
 import Employee from "./Employee";
+import EmployeeStates from "./EmployeeStates";
 
 interface Employees {
   employees: Array<Employee>,
-  filteredEmployees: Array<Employee>,
+  filter: EmployeeStates,
   focused: Employee
 }
 

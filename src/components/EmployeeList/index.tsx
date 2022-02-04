@@ -7,14 +7,21 @@ import State from "../../models/State";
 import mocklogo from "../../assets/mocklogo_reduced.png";
 
 const EmployeeList = (props: any) => {
-  const { filteredEmployees, getEmployees } = props;
+  const { employees, getEmployees, activeFilter } = props;
 
   useEffect(() => {
     getEmployees();
   }, [getEmployees]);
 
+  useEffect(() => {
+    updatePageNumber(1)
+  }, [activeFilter]);
+
   const [page, updatePageNumber] = useState(1);
   const pageSize = 4;
+  const filteredEmployees = activeFilter
+    ? employees.filter((employee: Employee) => employee.status === activeFilter)
+    : employees;
 
   return (
     filteredEmployees && (
@@ -25,7 +32,7 @@ const EmployeeList = (props: any) => {
             <Card
               key={employee.id}
               className="employee-card"
-              cover={<img alt="workmotion cover image" src={mocklogo} />}
+              cover={<img alt="workmotion cover" src={mocklogo} />}
             >
               <Card.Meta
                 avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
@@ -51,10 +58,12 @@ const EmployeeList = (props: any) => {
 };
 
 const mapStateToProps = (state: State) => {
-  const { filteredEmployees } = state.employees;
+  const { employees } = state.employees;
+  const { activeFilter } = state.filter;
 
   return {
-    filteredEmployees,
+    employees,
+    activeFilter,
   };
 };
 
