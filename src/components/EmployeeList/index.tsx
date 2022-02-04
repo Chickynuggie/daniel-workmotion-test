@@ -20,7 +20,7 @@ const EmployeeList = (props: any) => {
   }, [activeFilter]);
 
   const [page, updatePageNumber] = useState(1);
-  const pageSize = 4;
+  const pageSize = 8;
   const filteredEmployees = activeFilter
     ? employees.filter((employee: Employee) => employee.status === activeFilter)
     : employees;
