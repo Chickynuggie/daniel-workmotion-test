@@ -5,6 +5,7 @@ import { getEmployees } from "../../redux/actions/employees";
 import Employee from "../../models/Employee";
 import State from "../../models/State";
 import mocklogo from "../../assets/mocklogo_reduced.png";
+import avatar from "../../assets/avatar.png";
 
 const EmployeeList = (props: any) => {
   const { employees, getEmployees, activeFilter } = props;
@@ -35,7 +36,7 @@ const EmployeeList = (props: any) => {
               cover={<img alt="workmotion cover" src={mocklogo} />}
             >
               <Card.Meta
-                avatar={<Avatar src="https://joeschmoe.io/api/v1/random" />}
+                avatar={<Avatar src={avatar} className="employee-avatar" />}
                 title={`${employee.firstName} ${employee.lastName}`}
                 description={`${employee.status}`}
               />

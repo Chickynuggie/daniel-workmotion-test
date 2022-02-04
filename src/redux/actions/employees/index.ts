@@ -1,7 +1,6 @@
 import ACTIONTYPES from "../actionTypes";
 import { Dispatch } from 'redux';
 import { fetchEmployees, fetchEmployeeById } from "../../../api";
-import EmployeeStates from "../../../models/EmployeeStates";
 
 export const getEmployees = () => (dispatch: Dispatch) => {
   fetchEmployees().then(response => {
