@@ -83,6 +83,18 @@
       "lastName": "Powder",
       "status": "ADDED",
       "id": "2a767ac2-b90e-40a7-9071-dd6b627585ea"
+    },
+    {
+      "firstName": "Jotaro",
+      "lastName": "Kujo",
+      "status": "ADDED",
+      "id": "66eb796b-fe62-4287-a626-a8cdbd1d978f"
+    },
+    {
+      "firstName": "Public",
+      "lastName": "Relations",
+      "status": "INACTIVE",
+      "id": "2caefb87-2b66-4d51-8e44-92fe39869be9"
     }
   ]
 }

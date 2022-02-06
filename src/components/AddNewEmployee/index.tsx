@@ -1,25 +1,31 @@
 import React, { useState } from "react";
-import { v4 as uuidv4 } from "uuid";
 import { connect } from "react-redux";
-import { Drawer, Form, Button, Col, Row, Input, Select, Space } from "antd";
+import { Drawer, Button, Row, Col, Space, Form, notification } from "antd";
 import { PlusOutlined } from "@ant-design/icons";
-import { getEmployees } from "../../redux/actions/employees";
+import {
+  getEmployees,
+  clearFocusedEmployee,
+} from "../../redux/actions/employees";
+import EmployeeForm from "../EmployeeForm";
 import NewEmployee from "../../models/NewEmployee";
 import { createEmployee } from "../../api";
+import { v4 as uuidv4 } from "uuid";
 
-const { Option } = Select;
+import State from "../../models/State";
 
 const AddNewEmployee = (props: any) => {
   const { getEmployees } = props;
   const [isDrawerOpen, showDrawer] = useState(false);
-  const [form] = Form.useForm();
 
   const submit = (values: NewEmployee) => {
     values.id = uuidv4();
-    createEmployee(values).then(resp => {
-      getEmployees();
+    createEmployee(values).then((resp) => {
+      notification.success({
+        message: "Success!",
+        description: "Employee successfully created",
+      });
       showDrawer(false);
-      form.resetFields();
+      getEmployees();
     });
   };
 
@@ -27,7 +33,7 @@ const AddNewEmployee = (props: any) => {
     <div className="add-new-employee">
       <Button
         type="primary"
-        onClick={() => showDrawer(!isDrawerOpen)}
+        onClick={() => showDrawer(true)}
         icon={<PlusOutlined />}
       >
         Add new employee
@@ -35,50 +41,18 @@ const AddNewEmployee = (props: any) => {
       <Drawer
         title="Add new employee"
         onClose={() => showDrawer(false)}
+        destroyOnClose={true}
         width={720}
         visible={isDrawerOpen}
-        bodyStyle={{ paddingBottom: 80 }}
       >
-        <Form layout="vertical" hideRequiredMark onFinish={submit} form={form}>
-          <Row gutter={16}>
-            <Col span={12}>
-              <Form.Item
-                name="firstName"
-                label="First name"
-                rules={[{ required: true, message: "Please enter first name" }]}
-              >
-                <Input placeholder="Please enter first name" />
-              </Form.Item>
-            </Col>
-            <Col span={12}>
-              <Form.Item
-                name="lastName"
-                label="Last name"
-                rules={[{ required: true, message: "Please enter last name" }]}
-              >
-                <Input placeholder="Please enter last name" />
-              </Form.Item>
-            </Col>
-          </Row>
-          <Row gutter={16}>
-            <Col span={12}>
-              <Form.Item
-                name="status"
-                label="Status"
-                rules={[
-                  { required: true, message: "Please select employee status" },
-                ]}
-              >
-                <Select placeholder="Please select employee status">
-                  <Option value="ADDED">Added</Option>
-                  <Option value="IN-CHECK">In check</Option>
-                  <Option value="APPROVED">Approved</Option>
-                  <Option value="ACTIVE">Active</Option>
-                  <Option value="INACTIVE">In check</Option>
-                </Select>
-              </Form.Item>
-            </Col>
-          </Row>
+        <Form
+          layout="vertical"
+          onFinish={submit}
+          hideRequiredMark
+          name="addEmployeeForm"
+        >
+          <EmployeeForm></EmployeeForm>
+
           <Row gutter={16}>
             <Col span={12}>
               <Space>
@@ -95,8 +69,11 @@ const AddNewEmployee = (props: any) => {
   );
 };
 
-const mapStateToProps = () => {
-  return {};
+const mapStateToProps = (state: State) => {
+  const { focused } = state.employees;
+  return { focused };
 };
 
-export default connect(mapStateToProps, { getEmployees })(AddNewEmployee);
+export default connect(mapStateToProps, { getEmployees, clearFocusedEmployee })(
+  AddNewEmployee
+);

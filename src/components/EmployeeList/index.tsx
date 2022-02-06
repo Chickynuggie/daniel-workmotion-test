@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { Card, Avatar, Pagination } from "antd";
-import { getEmployees } from "../../redux/actions/employees";
+import { getEmployees, setFocusedEmployee } from "../../redux/actions/employees";
 import Employee from "../../models/Employee";
 import State from "../../models/State";
 import mocklogo from "../../assets/mocklogo_reduced.png";
 import avatar from "../../assets/avatar.png";
 import AddNewEmployee from "../AddNewEmployee";
+import EditEmployee from "../EditEmployee";
 
 const EmployeeList = (props: any) => {
-  const { employees, getEmployees, activeFilter } = props;
+  const { employees, getEmployees, setFocusedEmployee, activeFilter } = props;
 
   useEffect(() => {
     getEmployees();
@@ -32,6 +33,7 @@ const EmployeeList = (props: any) => {
           .slice((page - 1) * pageSize, page * pageSize)
           .map((employee: Employee) => (
             <Card
+              onClick={() => setFocusedEmployee(employee)}
               key={employee.id}
               className="employee-card"
               cover={<img alt="workmotion cover" src={mocklogo} />}
@@ -60,6 +62,7 @@ const EmployeeList = (props: any) => {
           </div>
         )}
         <AddNewEmployee></AddNewEmployee>
+        <EditEmployee></EditEmployee>
       </div>
     )
   );
@@ -75,4 +78,4 @@ const mapStateToProps = (state: State) => {
   };
 };
 
-export default connect(mapStateToProps, { getEmployees })(EmployeeList);
+export default connect(mapStateToProps, { getEmployees, setFocusedEmployee })(EmployeeList);
