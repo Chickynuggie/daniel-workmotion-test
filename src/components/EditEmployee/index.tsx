@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { connect } from "react-redux";
+import React, {useEffect, useState} from 'react';
+import {connect} from 'react-redux';
 import {
   Drawer,
   Form,
@@ -9,16 +9,16 @@ import {
   Button,
   notification,
   Modal,
-} from "antd";
+} from 'antd';
 import {
   clearFocusedEmployee,
   getEmployees,
-} from "../../redux/actions/employees";
-import EmployeeForm from "../EmployeeForm";
-import { updateEmployee, deleteEmployee } from "../../api";
-import State from "../../models/State";
-import NewEmployee from "../../models/NewEmployee";
-import { DeleteOutlined } from "@ant-design/icons";
+} from '../../redux/actions/employees';
+import EmployeeForm from '../EmployeeForm';
+import {updateEmployee, deleteEmployee} from '../../api';
+import State from '../../models/State';
+import NewEmployee from '../../models/NewEmployee';
+import {DeleteOutlined} from '@ant-design/icons';
 import Employee from '../../models/Employee';
 
 interface editEmployeeProps {
@@ -28,7 +28,7 @@ interface editEmployeeProps {
 }
 
 const EditEmployee = (props: editEmployeeProps) => {
-  const { focused, clearFocusedEmployee, getEmployees } = props;
+  const {focused, clearFocusedEmployee, getEmployees} = props;
   const [isDrawerOpen, showDrawer] = useState(!!focused);
   const [isModalOpen, showModal] = useState(false);
   const [isDirty, setDirty] = useState(false);
@@ -45,7 +45,7 @@ const EditEmployee = (props: editEmployeeProps) => {
   const submit = (values: NewEmployee) => {
     updateEmployee(focused.id, values).then(() => {
       notification.success({
-        message: "Employee updated",
+        message: 'Employee updated',
       });
       getEmployees();
       handleOnClose();
@@ -56,7 +56,7 @@ const EditEmployee = (props: editEmployeeProps) => {
     showModal(false);
     deleteEmployee(focused.id).then(() => {
       notification.success({
-        message: "Employee removed",
+        message: 'Employee removed',
       });
       getEmployees();
       handleOnClose();
@@ -92,9 +92,9 @@ const EditEmployee = (props: editEmployeeProps) => {
         </Row>
         <div
           style={{
-            margin: "30px 0 10px",
-            borderBottom: "1px solid red",
-            paddingBottom: "5px",
+            margin: '30px 0 10px',
+            borderBottom: '1px solid red',
+            paddingBottom: '5px',
           }}
         >
           Danger zone
@@ -105,7 +105,7 @@ const EditEmployee = (props: editEmployeeProps) => {
               <Button
                 type="primary"
                 danger
-                style={{ marginTop: "15px" }}
+                style={{marginTop: '15px'}}
                 icon={<DeleteOutlined />}
                 onClick={() => showModal(true)}
               >
@@ -128,10 +128,10 @@ const EditEmployee = (props: editEmployeeProps) => {
 };
 
 const mapStateToProps = (state: State) => {
-  const { focused } = state.employees;
-  return { focused };
+  const {focused} = state.employees;
+  return {focused};
 };
 
-export default connect(mapStateToProps, { clearFocusedEmployee, getEmployees })(
-  EditEmployee
+export default connect(mapStateToProps, {clearFocusedEmployee, getEmployees})(
+    EditEmployee,
 );

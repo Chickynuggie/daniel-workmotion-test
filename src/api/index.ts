@@ -1,5 +1,5 @@
-import axios from "axios";
-import NewEmployee from "../models/NewEmployee";
+import axios from 'axios';
+import NewEmployee from '../models/NewEmployee';
 
 const backendUrl = `http://localhost:3004`;
 

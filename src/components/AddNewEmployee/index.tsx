@@ -1,32 +1,32 @@
-import React, { useState } from "react";
-import { connect } from "react-redux";
-import { Drawer, Button, Row, Col, Space, Form, notification } from "antd";
-import { PlusOutlined } from "@ant-design/icons";
+import React, {useState} from 'react';
+import {connect} from 'react-redux';
+import {Drawer, Button, Row, Col, Space, Form, notification} from 'antd';
+import {PlusOutlined} from '@ant-design/icons';
 import {
   getEmployees,
   clearFocusedEmployee,
-} from "../../redux/actions/employees";
-import EmployeeForm from "../EmployeeForm";
-import NewEmployee from "../../models/NewEmployee";
-import { createEmployee } from "../../api";
-import { v4 as uuidv4 } from "uuid";
+} from '../../redux/actions/employees';
+import EmployeeForm from '../EmployeeForm';
+import NewEmployee from '../../models/NewEmployee';
+import {createEmployee} from '../../api';
+import {v4 as uuidv4} from 'uuid';
 
-import State from "../../models/State";
+import State from '../../models/State';
 
 interface addNewEmployeeProps {
   getEmployees: Function
 }
 
 const AddNewEmployee = (props: addNewEmployeeProps) => {
-  const { getEmployees } = props;
+  const {getEmployees} = props;
   const [isDrawerOpen, showDrawer] = useState(false);
 
   const submit = (values: NewEmployee) => {
     values.id = uuidv4();
     createEmployee(values).then((resp) => {
       notification.success({
-        message: "Success!",
-        description: "Employee successfully created",
+        message: 'Success!',
+        description: 'Employee successfully created',
       });
       showDrawer(false);
       getEmployees();
@@ -73,10 +73,10 @@ const AddNewEmployee = (props: addNewEmployeeProps) => {
 };
 
 const mapStateToProps = (state: State) => {
-  const { focused } = state.employees;
-  return { focused };
+  const {focused} = state.employees;
+  return {focused};
 };
 
-export default connect(mapStateToProps, { getEmployees, clearFocusedEmployee })(
-  AddNewEmployee
+export default connect(mapStateToProps, {getEmployees, clearFocusedEmployee})(
+    AddNewEmployee,
 );

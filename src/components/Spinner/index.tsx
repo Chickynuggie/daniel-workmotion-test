@@ -1,14 +1,14 @@
-import React from "react";
-import { Spin } from "antd";
-import { connect } from "react-redux";
-import State from "../../models/State";
+import React from 'react';
+import {Spin} from 'antd';
+import {connect} from 'react-redux';
+import State from '../../models/State';
 
 interface SpinnerProps {
   isSpinning: boolean
 }
 
 const Spinner = (props: SpinnerProps) => {
-  const { isSpinning } = props;
+  const {isSpinning} = props;
 
   return isSpinning ? (
     <div className="spinner">
@@ -18,8 +18,8 @@ const Spinner = (props: SpinnerProps) => {
 };
 
 const mapStateToProps = (state: State) => {
-  const { isSpinning } = state.spinner;
-  return { isSpinning };
+  const {isSpinning} = state.spinner;
+  return {isSpinning};
 };
 
 export default connect(mapStateToProps)(Spinner);

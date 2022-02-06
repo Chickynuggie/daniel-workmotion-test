@@ -1,4 +1,4 @@
-import EmployeeStates from './EmployeeStates'
+import EmployeeStates from './EmployeeStates';
 
 interface Employee {
   id: string,

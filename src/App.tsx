@@ -1,13 +1,13 @@
-import React from "react";
-import { Provider } from "react-redux";
-import { createStore, applyMiddleware, compose } from "redux";
-import thunk from "redux-thunk";
-import CustomPageHeader from "./components/CustomPageHeader";
-import rootReducer from "./redux/reducers";
-import initialState from "./redux/store";
-import Interceptor from "./interceptor";
-import EmployeeList from "./components/EmployeeList";
-import Spinner from "./components/Spinner";
+import React from 'react';
+import {Provider} from 'react-redux';
+import {createStore, applyMiddleware, compose} from 'redux';
+import thunk from 'redux-thunk';
+import CustomPageHeader from './components/CustomPageHeader';
+import rootReducer from './redux/reducers';
+import initialState from './redux/store';
+import interceptor from './interceptor';
+import EmployeeList from './components/EmployeeList';
+import Spinner from './components/Spinner';
 
 // For redux devtool
 declare global {
@@ -22,7 +22,7 @@ const enhancer = composeEnhancers(applyMiddleware(thunk));
 
 const store = createStore(rootReducer, initialState, enhancer);
 
-Interceptor(store);
+interceptor(store);
 
 const App = () => {
   return (

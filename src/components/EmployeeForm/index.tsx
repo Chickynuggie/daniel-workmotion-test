@@ -1,8 +1,8 @@
-import React from "react";
-import { Form, Col, Row, Input, Select } from "antd";
-import { connect } from "react-redux";
+import React from 'react';
+import {Form, Col, Row, Input, Select} from 'antd';
+import {connect} from 'react-redux';
 
-const { Option } = Select;
+const {Option} = Select;
 
 const EmployeeForm = () => {
   return (
@@ -12,7 +12,7 @@ const EmployeeForm = () => {
           <Form.Item
             name="firstName"
             label="First name"
-            rules={[{ required: true, message: "Please enter first name" }]}
+            rules={[{required: true, message: 'Please enter first name'}]}
           >
             <Input placeholder="Please enter first name" />
           </Form.Item>
@@ -21,7 +21,7 @@ const EmployeeForm = () => {
           <Form.Item
             name="lastName"
             label="Last name"
-            rules={[{ required: true, message: "Please enter last name" }]}
+            rules={[{required: true, message: 'Please enter last name'}]}
           >
             <Input placeholder="Please enter last name" />
           </Form.Item>
@@ -33,7 +33,7 @@ const EmployeeForm = () => {
             name="status"
             label="Status"
             rules={[
-              { required: true, message: "Please select employee status" },
+              {required: true, message: 'Please select employee status'},
             ]}
           >
             <Select placeholder="Please select employee status">

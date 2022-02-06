@@ -1,21 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { Card, Avatar, Pagination } from "antd";
-import { getEmployees, setFocusedEmployee } from "../../redux/actions/employees";
+import {
+  getEmployees,
+  setFocusedEmployee,
+} from "../../redux/actions/employees";
 import Employee from "../../models/Employee";
 import State from "../../models/State";
 import mocklogo from "../../assets/mocklogo_reduced.png";
 import avatar from "../../assets/avatar.png";
 import AddNewEmployee from "../AddNewEmployee";
 import EditEmployee from "../EditEmployee";
-import Employees from "../../models/Employees";
-import EmployeeStates from "../../models/EmployeeStates";
 
 interface EmployeeListProps {
-  employees: Array<Employee>,
-  getEmployees: Function,
-  setFocusedEmployee: Function,
-  activeFilter: string
+  employees: Array<Employee>;
+  getEmployees: Function;
+  setFocusedEmployee: Function;
+  activeFilter: string;
 }
 
 const EmployeeList = (props: EmployeeListProps) => {
@@ -87,4 +88,6 @@ const mapStateToProps = (state: State) => {
   };
 };
 
-export default connect(mapStateToProps, { getEmployees, setFocusedEmployee })(EmployeeList);
+export default connect(mapStateToProps, { getEmployees, setFocusedEmployee })(
+  EmployeeList
+);

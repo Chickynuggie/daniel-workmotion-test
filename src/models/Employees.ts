@@ -1,5 +1,5 @@
-import Employee from "./Employee";
-import EmployeeStates from "./EmployeeStates";
+import Employee from './Employee';
+import EmployeeStates from './EmployeeStates';
 
 interface Employees {
   employees: Array<Employee>,

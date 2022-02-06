@@ -1,14 +1,14 @@
 const initialState = Object.freeze({
   employees: {
     employees: [],
-    focused: null
+    focused: null,
   },
   spinner: {
     isSpinning: false,
   },
   filter: {
-    activeFilter: ''
-  }
+    activeFilter: '',
+  },
 });
 
 export default initialState;

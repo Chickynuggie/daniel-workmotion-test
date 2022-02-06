@@ -1,13 +1,14 @@
-import { PageHeader, Menu } from "antd";
-import { RightCircleOutlined } from "@ant-design/icons";
+import React from 'react';
+import {PageHeader, Menu} from 'antd';
+import {RightCircleOutlined} from '@ant-design/icons';
 import {
   setEmployeeFilter,
   clearEmployeeFilter,
-} from "../../redux/actions/filter";
-import { connect } from "react-redux";
+} from '../../redux/actions/filter';
+import {connect} from 'react-redux';
 
 const CustomPageHeader = (props: any) => {
-  const { setEmployeeFilter, clearEmployeeFilter } = props;
+  const {setEmployeeFilter, clearEmployeeFilter} = props;
 
   return (
     <>
@@ -26,35 +27,35 @@ const CustomPageHeader = (props: any) => {
         <Menu.Item
           key="added"
           icon={<RightCircleOutlined />}
-          onClick={() => setEmployeeFilter("ADDED")}
+          onClick={() => setEmployeeFilter('ADDED')}
         >
           Added
         </Menu.Item>
         <Menu.Item
           key="inCheck"
           icon={<RightCircleOutlined />}
-          onClick={() => setEmployeeFilter("IN-CHECK")}
+          onClick={() => setEmployeeFilter('IN-CHECK')}
         >
           In-check
         </Menu.Item>
         <Menu.Item
           key="approved"
           icon={<RightCircleOutlined />}
-          onClick={() => setEmployeeFilter("APPROVED")}
+          onClick={() => setEmployeeFilter('APPROVED')}
         >
           Approved
         </Menu.Item>
         <Menu.Item
           key="active"
           icon={<RightCircleOutlined />}
-          onClick={() => setEmployeeFilter("ACTIVE")}
+          onClick={() => setEmployeeFilter('ACTIVE')}
         >
           Active
         </Menu.Item>
         <Menu.Item
           key="inactive"
           icon={<RightCircleOutlined />}
-          onClick={() => setEmployeeFilter("INACTIVE")}
+          onClick={() => setEmployeeFilter('INACTIVE')}
         >
           Inactive
         </Menu.Item>
