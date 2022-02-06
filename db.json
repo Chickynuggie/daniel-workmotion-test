@@ -95,6 +95,12 @@
       "lastName": "Relations",
       "status": "INACTIVE",
       "id": "2caefb87-2b66-4d51-8e44-92fe39869be9"
+    },
+    {
+      "firstName": "JojojoJo",
+      "lastName": "Jotaro",
+      "status": "ACTIVE",
+      "id": "64f36ac0-c0c9-4cfe-80f3-d7d03adb3ea8"
     }
   ]
 }

@@ -41,7 +41,7 @@ const EmployeeForm = (props: any) => {
               <Option value="IN-CHECK">In check</Option>
               <Option value="APPROVED">Approved</Option>
               <Option value="ACTIVE">Active</Option>
-              <Option value="INACTIVE">In check</Option>
+              <Option value="INACTIVE">Inactive</Option>
             </Select>
           </Form.Item>
         </Col>

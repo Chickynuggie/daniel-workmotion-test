@@ -52,7 +52,6 @@ const AddNewEmployee = (props: any) => {
           name="addEmployeeForm"
         >
           <EmployeeForm></EmployeeForm>
-
           <Row gutter={16}>
             <Col span={12}>
               <Space>
