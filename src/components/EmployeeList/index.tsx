@@ -8,8 +8,17 @@ import mocklogo from "../../assets/mocklogo_reduced.png";
 import avatar from "../../assets/avatar.png";
 import AddNewEmployee from "../AddNewEmployee";
 import EditEmployee from "../EditEmployee";
+import Employees from "../../models/Employees";
+import EmployeeStates from "../../models/EmployeeStates";
 
-const EmployeeList = (props: any) => {
+interface EmployeeListProps {
+  employees: Array<Employee>,
+  getEmployees: Function,
+  setFocusedEmployee: Function,
+  activeFilter: string
+}
+
+const EmployeeList = (props: EmployeeListProps) => {
   const { employees, getEmployees, setFocusedEmployee, activeFilter } = props;
 
   useEffect(() => {

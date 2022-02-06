@@ -1,5 +1,5 @@
 interface Spinner {
-  isSpinning: Boolean
+  isSpinning: boolean
 }
 
 export default Spinner;

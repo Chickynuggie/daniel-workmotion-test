@@ -1,9 +1,9 @@
 import EmployeeStates from './EmployeeStates'
 
 interface Employee {
-  id: number,
-  firstName: String,
-  lastName: String,
+  id: string,
+  firstName: string,
+  lastName: string,
   status: EmployeeStates
 }
 

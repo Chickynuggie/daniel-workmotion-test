@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 
 const { Option } = Select;
 
-const EmployeeForm = (props: any) => {
+const EmployeeForm = () => {
   return (
     <>
       <Row gutter={16}>

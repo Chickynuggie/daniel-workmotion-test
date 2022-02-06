@@ -9,7 +9,7 @@ export const getEmployees = () => (dispatch: Dispatch) => {
   });
 };
 
-export const getEmployeeById = (id: number) => (dispatch: Dispatch) => {
+export const getEmployeeById = (id: string) => (dispatch: Dispatch) => {
   fetchEmployeeById(id).then(response => {
     dispatch({ type: ACTIONTYPES.EMPLOYEES.SET_EMPLOYEE_FOCUS, payload: response.data });
   });

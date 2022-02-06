@@ -3,7 +3,11 @@ import { Spin } from "antd";
 import { connect } from "react-redux";
 import State from "../../models/State";
 
-const Spinner = (props: any) => {
+interface SpinnerProps {
+  isSpinning: boolean
+}
+
+const Spinner = (props: SpinnerProps) => {
   const { isSpinning } = props;
 
   return isSpinning ? (

@@ -13,7 +13,11 @@ import { v4 as uuidv4 } from "uuid";
 
 import State from "../../models/State";
 
-const AddNewEmployee = (props: any) => {
+interface addNewEmployeeProps {
+  getEmployees: Function
+}
+
+const AddNewEmployee = (props: addNewEmployeeProps) => {
   const { getEmployees } = props;
   const [isDrawerOpen, showDrawer] = useState(false);
 
